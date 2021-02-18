@@ -7,8 +7,13 @@ let li = document.getElementById("li");
 function createItem() {
     let li = document.createElement("li");
     li.appendChild(document.createTextNode(input.value));
-    ul.appendChild(li);
     input.value = "";
+    ul.appendChild(li);
+
+    const closeBtn = document.createElement("button");
+    closeBtn.appendChild(document.createTextNode("X"));
+    li.appendChild(closeBtn);
+    
 }
 
 
