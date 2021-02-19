@@ -1,8 +1,7 @@
 let input = document.getElementById("input");
-let enter = document.getElementById("enter");
+const enter = document.getElementById("enter");
 let ul = document.querySelector("ul");
 let li = document.getElementById("li");
-
 
 function createItem() {
     let li = document.createElement("li");
@@ -13,8 +12,12 @@ function createItem() {
     const closeBtn = document.createElement("button");
     closeBtn.appendChild(document.createTextNode("X"));
     li.appendChild(closeBtn);
-    
-}
+    closeBtn.addEventListener("click", removeItem);
 
+    function removeItem(){
+        li.remove();
+        console.log("deleting...");
+    }
+}
 
 enter.addEventListener("click", createItem);
