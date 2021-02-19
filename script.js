@@ -4,20 +4,29 @@ let ul = document.querySelector("ul");
 let li = document.getElementById("li");
 
 function createItem() {
-    let li = document.createElement("li");
-    li.appendChild(document.createTextNode(input.value));
-    input.value = "";
-    ul.appendChild(li);
 
-    const closeBtn = document.createElement("button");
-    closeBtn.appendChild(document.createTextNode("X"));
-    li.appendChild(closeBtn);
-    closeBtn.addEventListener("click", removeItem);
+    if(!input.value) {
+        alert("Nothing entered, please add something");
+    } 
+    else {
 
-    function removeItem(){
-        li.remove();
-        console.log("deleting...");
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(input.value));
+        input.value = "";
+        ul.appendChild(li);
+    
+        const closeBtn = document.createElement("button");
+        closeBtn.appendChild(document.createTextNode("X"));
+        li.appendChild(closeBtn);
+    
+        function removeItem(){
+            li.remove();
+        }
+    
+        closeBtn.addEventListener("click", removeItem);
     }
+
+
 }
 
 enter.addEventListener("click", createItem);
