@@ -1,7 +1,7 @@
 let input = document.getElementById("input");
 const enter = document.getElementById("enter");
 let ul = document.querySelector("ul");
-let li = document.getElementById("li");
+const li = document.getElementById("li");
 
 function createItem() {
 
@@ -10,10 +10,11 @@ function createItem() {
     } 
     else {
 
-        let li = document.createElement("li");
+        const li = document.createElement("li");
         li.appendChild(document.createTextNode(input.value));
         input.value = "";
         ul.appendChild(li);
+
     
         const closeBtn = document.createElement("button");
         closeBtn.appendChild(document.createTextNode("X"));
@@ -25,8 +26,12 @@ function createItem() {
     
         closeBtn.addEventListener("click", removeItem);
     }
-
-
 }
 
-enter.addEventListener("click", createItem);
+enter.addEventListener('click', createItem);
+input.addEventListener('keydown', e => {
+    if('Enter'=== e.key) {
+        console.log("test");
+        createItem();
+    }
+});
