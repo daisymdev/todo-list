@@ -1,0 +1,16 @@
+
+.menu {
+    width: 55px;
+}
+.menu div {
+    background-color: blue;
+    border-radius: 20px;
+    padding:7px;
+    margin-top: 3px;
+    display: flex;
+    justify-content: right;
+}
+
+.active {
+    background-color: red;
+}
