@@ -15,7 +15,6 @@ function createItem() {
         input.value = "";
         ul.appendChild(li);
 
-    
         const closeBtn = document.createElement("button");
         closeBtn.appendChild(document.createTextNode("X"));
         li.appendChild(closeBtn);
@@ -29,9 +28,8 @@ function createItem() {
 }
 
 enter.addEventListener('click', createItem);
-input.addEventListener('keydown', e => {
+input.addEventListener('keydown', (e) => {
     if('Enter'=== e.key) {
-        console.log("test");
         createItem();
     }
 });
